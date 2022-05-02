@@ -1,11 +1,16 @@
 package org.launchcode.pandaplanner.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private static int nextId = 1;
     private String name;
     private String email;
     private String password;
@@ -14,9 +19,9 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.id = nextId;
-        nextId++;
     }
+
+    public User() {}
 
     public int getId() {
         return id;
