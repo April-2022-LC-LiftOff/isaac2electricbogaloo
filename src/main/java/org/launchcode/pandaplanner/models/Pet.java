@@ -19,7 +19,6 @@ public class Pet extends AbstractEntity {
 
     public Pet() {}
 
-
     public String getType() {
         return type;
     }
