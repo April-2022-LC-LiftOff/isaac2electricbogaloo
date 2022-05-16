@@ -1,0 +1,24 @@
+
+
+.card{
+margin-top: 10px;
+border: solid silver;
+padding: 20px;
+width: 500px;
+top: 50%;
+left: 30%;
+transform: translate(-5, -50%);
+background: rgb(5, 127, 175);
+background: linear-gradient(rgb(42, 155, 95));
+box-shadow: 5px 20px 50px black;
+overflow: hidden;
+}
+
+.card h1,h6{
+    color: aliceblue;
+    font-family: monospace;
+
+}
+label h1{
+    color: aliceblue;
+}

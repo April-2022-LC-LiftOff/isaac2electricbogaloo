@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+.background{
+    background-color: blue;
+    background-image: url(./img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    
+}
+
+.background h1{
+    text-align: right;
+    font-size: 190px;
+    font-stretch: expanded;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    
+}
+.background h2{
+    text-align: right;
+    font-size: 30px;
+    font-stretch: expanded;
+    color: greenyellow;  
+}
+.background button{
+align-items:right;
+}
+
+/* html, body { height: 100%; }
+body {
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: aqua;
+} */
