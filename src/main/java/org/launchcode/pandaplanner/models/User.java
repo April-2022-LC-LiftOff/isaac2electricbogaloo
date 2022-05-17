@@ -1,39 +1,34 @@
 package org.launchcode.pandaplanner.models;
 
+import com.sun.istack.NotNull;
+import org.launchcode.pandaplanner.data.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.Objects;
+import javax.persistence.OneToOne;
+
 
 @Entity
-public class User {
+public class User extends AbstractEntity {
 
-    @Id
-    @GeneratedValue
-    private int id;
-    private String name;
     private String email;
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @NotNull
+    private Pet pet;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private ToDo todo;
+
     public User(String name, String email, String password) {
-        this.name = name;
+        super();
         this.email = email;
         this.password = password;
     }
 
     public User() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmail() {
         return email;
@@ -51,16 +46,19 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id;
+    public Pet getPet() {
+        return pet;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public ToDo getTodo() {
+        return todo;
+    }
+
+    public void setTodo(ToDo todo) {
+        this.todo = todo;
     }
 }
