@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent, LandingPageComponent
+    AppComponent, HomePageComponent, LandingPageComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,

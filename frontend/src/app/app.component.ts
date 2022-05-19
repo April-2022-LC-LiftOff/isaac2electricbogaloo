@@ -8,5 +8,4 @@ import {FormGroup, FormControl} from '@angular/forms';
 })
 export class AppComponent {
   title = 'panda-planner-app';
-  hideNav: boolean=true
 }
