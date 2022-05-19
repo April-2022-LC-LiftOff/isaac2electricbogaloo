@@ -4,9 +4,9 @@ plugins {
 	id 'java'
 }
 
-group = 'org.launchcode'
+group = 'com.panda'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -16,7 +16,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.6.3'
 	implementation 'mysql:mysql-connector-java'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
