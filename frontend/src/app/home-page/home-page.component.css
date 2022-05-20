@@ -1,24 +1,29 @@
+.banner{
+    background-image: url('../../img/pandabackground.jpg');
+    height: 1200px;
+    background-position: center;
+    background-size: cover;
 
 
-.card{
-margin-top: 10px;
-border: solid silver;
-padding: 20px;
-width: 500px;
-top: 50%;
-left: 30%;
-transform: translate(-5, -50%);
-background: rgb(5, 127, 175);
-background: linear-gradient(rgb(42, 155, 95));
-box-shadow: 5px 20px 50px black;
-overflow: hidden;
-}
-
-.card h1,h6{
-    color: aliceblue;
-    font-family: monospace;
 
 }
-label h1{
-    color: aliceblue;
+h1{
+    font-size: 300px;
+    color: black;
+    padding: 100px;
+    position: center;
+    left: auto
+}
+
+ h2{
+    text-align: center;
+} 
+
+.sign-up-buton{
+    margin-left: 59%;
+    color: #fff;
+    border-radius: 5px;
+ }
+.steps h1{
+    font-size: 50px;
 }

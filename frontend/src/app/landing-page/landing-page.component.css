@@ -1,5 +1,7 @@
 
-/* .background btn btn-primary{
-    align-items:left;
-    color: yellowgreen;
-} */
+.banner{
+    background-image: url('../../img/purple.jpg');
+    height: 1200px;
+    background-position: center;
+    background-size: cover;
+}
