@@ -1,6 +1,6 @@
 .footer{
     overflow: hidden;
-    background-color: black;
+    background-color: rgb(50, 48, 48);
     padding: 20px 10px;
     position: sticky;
     top:100%
@@ -32,4 +32,7 @@ i:hover{
 a:hover{
     color: green;
 
+}
+p{
+    color: white;
 }

@@ -8,11 +8,13 @@
 
 }
 h1{
+    font-weight: bold;
     font-size: 300px;
-    color: black;
+    color: rgb(57, 53, 53);
     padding: 100px;
     position: center;
     left: auto
+    
 }
 
  h2{
@@ -23,7 +25,34 @@ h1{
     margin-left: 59%;
     color: #fff;
     border-radius: 5px;
+    
  }
-.steps h1{
+
+ .content a:hover{
+     background-color: var(--primary-color);
+     color: #fff;
+ }
+
+.stepBox{
+    background-color: rgb(44, 98, 44);
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10%;
+    /* background: url("https://drive.google.com/uc?export=view&id=1DRdKtOhOEDyc8vGRSvURYJRiCFgK66fO"); */
+    background-size: 100%;
+}
+.stepBox h1{
+    color: purple;
     font-size: 50px;
+    font-weight: bold;
+    
+}
+.stepBox p{
+    font-weight: bold;
+    color:#fff
+
+}
+.text-center{
+    font-size: 24px;
 }
