@@ -1,64 +1,52 @@
-package org.launchcode.pandaplanner.models;
+package org.launchcode.pandaplanner.auth.models;
 
-import com.sun.istack.NotNull;
-import org.launchcode.pandaplanner.data.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.CascadeType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class User extends AbstractEntity {
 
-    private String email;
-    private String password;
-
-    @OneToOne(cascade = CascadeType.ALL)
     @NotNull
-    private Pet pet;
+    private String firstName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private ToDo todo;
+    @NotNull
+    private String lastName;
 
-    public User(String name, String email, String password) {
-        super();
-        this.email = email;
-        this.password = password;
-    }
+    @NotNull
+    private String email;
+
+    @NotNull
+    private String pwHash;
+
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {}
+
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.pwHash = encoder.encode(password);
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public ToDo getTodo() {
-        return todo;
-    }
-
-    public void setTodo(ToDo todo) {
-        this.todo = todo;
-    }
 }

@@ -1,4 +1,4 @@
-package org.launchcode.pandaplanner.models;
+package org.launchcode.pandaplanner.auth.models;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;

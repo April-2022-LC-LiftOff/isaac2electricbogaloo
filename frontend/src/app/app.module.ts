@@ -4,14 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent, LandingPageComponent, NavbarComponent
+    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, 
   ],
   imports: [
     BrowserModule,
@@ -19,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

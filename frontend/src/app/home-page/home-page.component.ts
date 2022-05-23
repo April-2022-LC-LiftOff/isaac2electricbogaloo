@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConstantsService } from '../constants.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router, private constants: ConstantsService
   ) { }
 
   ngOnInit() {

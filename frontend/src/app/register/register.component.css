@@ -1,0 +1,19 @@
+
+/* *{
+    background-image: url('../../img/purple.jpg');
+    height: 1200px;
+    background-position: center;
+    background-size: cover;
+} */
+
+.form{
+    width: 500px;
+
+}
+
+ .conatiner{
+    height: 100wh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} 

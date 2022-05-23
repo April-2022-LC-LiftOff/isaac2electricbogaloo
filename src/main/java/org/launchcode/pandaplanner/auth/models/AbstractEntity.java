@@ -1,11 +1,12 @@
-package org.launchcode.pandaplanner.models;
+package org.launchcode.pandaplanner.auth.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-@Entity
+@MappedSuperclass
 public class AbstractEntity {
     @Id
     @GeneratedValue
@@ -29,18 +30,16 @@ public class AbstractEntity {
         this.name = name;
     }
 
-//    these were added by Brian, but I am unsure what they are meant to do or why?
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractEntity entity = (AbstractEntity) o;
+        return id == entity.id;
+    }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        User user = (User) o;
-//        return id == user.id;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

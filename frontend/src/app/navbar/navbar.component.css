@@ -1,0 +1,105 @@
+
+
+
+ .navbar-nav {
+    margin-left: auto;
+}
+
+.navbar{
+    box-shadow:0px 2px 5px #777;
+    height: 5%;
+}
+
+.img{
+  padding: 5px;
+  width: 100px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.navbar{
+    width:98%;
+}
+
+.mr-2{
+    margin-left: 25px;
+}
+
+.menu-box{
+    height:650px;
+    background-color: #8080801f;
+    width: 65px;
+}
+
+.menu-box:hover{
+    width: 215px;
+    transition: 0.3s;
+
+}
+
+.main-box{
+    height: 650px;
+    width: 170px;
+    background-color: #80808040;;
+}
+
+.menu-items{
+    list-style: none;
+    line-height: 60px;
+    padding-left: 0px;
+    height: 100%;
+}
+
+.menu-items li{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+-moz-box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+
+}
+
+.menu-items li:hover{
+    background-color: white;
+    color: grey;
+
+}
+.onActive{
+    color: white;
+    background-color: royalblue;
+    -webkit-box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+    -moz-box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+    box-shadow: 9px 9px 11px -7px rgba(0,0,0,0.48);
+}
+
+.onActive:hover{
+    color: white;
+    background-color: royalblue;
+
+} */
