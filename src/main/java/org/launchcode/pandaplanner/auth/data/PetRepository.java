@@ -1,6 +1,6 @@
-package org.launchcode.pandaplanner.data;
+package org.launchcode.pandaplanner.auth.data;
 
-import org.launchcode.pandaplanner.models.Pet;
+import org.launchcode.pandaplanner.auth.models.Pet;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package org.launchcode.pandaplanner.controllers;
+package org.launchcode.pandaplanner.auth.controllers;
 
 public class PetController {
 }

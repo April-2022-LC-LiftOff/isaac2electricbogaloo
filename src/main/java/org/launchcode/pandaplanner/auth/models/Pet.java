@@ -1,4 +1,4 @@
-package org.launchcode.pandaplanner.models;
+package org.launchcode.pandaplanner.auth.models;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -12,8 +12,6 @@ public class Pet extends AbstractEntity {
     private String type;
 
     public Pet(String type) {
-        super();
-
         this.type = type;
     }
 
