@@ -21,6 +21,21 @@ public class RegisterFormDTO {
 
     private String confirmPassword;
 
+    /*
+
+    **Kole's ideas for Pet object: **
+
+    @NotNull
+    private String petName;
+
+    @NotNull
+    private String petType;
+
+    and then just generate getters and setters for these.
+    the function to create a pet object has also been suggested via comments in userController.Java
+
+     */
+
     public String getFirstName() {
         return firstName;
     }

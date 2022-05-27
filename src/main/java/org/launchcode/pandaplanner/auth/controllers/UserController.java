@@ -41,6 +41,15 @@ public class UserController {
         User newUser = new User(registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail(), registerFormDTO.getPassword());
         userRepository.save(newUser);
 
+        //I would make a Pet here like:
+        /*
+        *   Pet newPet = new Pet(registerFormDTO.getPetName(), registerFormDTO.getPetType());
+        *   petRepository.save(newPet);
+        *
+        *  I also added via comment a way to do the strings in RegisterFormDTO.Java --NM
+        *
+        * */
+
         return ResponseEntity.ok(newUser);
     }
 
