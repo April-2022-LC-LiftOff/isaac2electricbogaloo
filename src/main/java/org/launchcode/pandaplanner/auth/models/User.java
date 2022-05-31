@@ -30,15 +30,19 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
+    @NotNull
+    private int pumpkins;
+
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {}
 
-    public User(String firstName, String lastName, String email, String password) {
+    public User(String firstName, String lastName, String email, String password, int pumpkins) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.pwHash = encoder.encode(password);
+        this.pumpkins = pumpkins;
     }
 
     public String getFirstName() {
@@ -57,5 +61,11 @@ public class User extends AbstractEntity {
         return encoder.matches(password, pwHash);
     }
 
+    public int getPumpkins() {
+        return pumpkins;
+    }
 
+    public void setPumpkins(int pumpkins) {
+        this.pumpkins = pumpkins;
+    }
 }

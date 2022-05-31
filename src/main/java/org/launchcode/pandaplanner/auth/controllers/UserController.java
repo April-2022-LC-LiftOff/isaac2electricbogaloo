@@ -38,7 +38,8 @@ public class UserController {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
-        User newUser = new User(registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail(), registerFormDTO.getPassword());
+        User newUser = new User(registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPumpkins());
+        newUser.setPumpkins(10);
         userRepository.save(newUser);
 
         //I would make a Pet here like:

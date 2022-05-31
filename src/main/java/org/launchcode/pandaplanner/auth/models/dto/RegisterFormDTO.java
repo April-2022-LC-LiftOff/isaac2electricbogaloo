@@ -21,6 +21,9 @@ public class RegisterFormDTO {
 
     private String confirmPassword;
 
+    @NotNull
+    private int pumpkins;
+
     /*
 
     **Kole's ideas for Pet object: **
@@ -74,5 +77,13 @@ public class RegisterFormDTO {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public int getPumpkins() {
+        return pumpkins;
+    }
+
+    public void setPumpkins(int pumpkins) {
+        this.pumpkins = pumpkins;
     }
 }
