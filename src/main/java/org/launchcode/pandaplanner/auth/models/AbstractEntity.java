@@ -8,6 +8,7 @@ import java.util.Objects;
 
 @MappedSuperclass
 public class AbstractEntity {
+
     @Id
     @GeneratedValue
     private int id;

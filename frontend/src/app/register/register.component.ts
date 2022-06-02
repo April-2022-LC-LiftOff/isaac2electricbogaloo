@@ -12,8 +12,6 @@ import { RegisterService } from './register.service';
 export class RegisterComponent implements OnInit {
 
   user: User = {
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
     confirmPassword: ""
@@ -26,7 +24,7 @@ export class RegisterComponent implements OnInit {
   onClickSubmit(): void {
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
-        console.log(`user saved: ${JSON.stringify(savedUser)}`);
+        console.log(`user signed in: ${JSON.stringify(savedUser)}`);
         this.router.navigate(["/home"]);
       },
       (e) => {

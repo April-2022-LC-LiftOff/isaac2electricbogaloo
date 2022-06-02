@@ -1,100 +1,56 @@
-
-<app-navbar></app-navbar>
-
-<div class="container">
-<form 
-    #form="ngForm"
-    class="border p-3 rounded-3"
-    method="post"
-    action="register"
-    (ngSubmit)="onClickSubmit()"
-    >
-    <div class="row g-0">
-        <div class="col text-center p-2 mb-3 bg-light">
-            <span class="fs-3">Register</span>
-        </div>
+<a class="navbar-brand" routerLink="/home"> <img src="https://drive.google.com/uc?export=view&id=1t_2e6E6NGZ0ydCpviCXZI-NHKJulFXs7"alt="logo" style="width:5em; height:5em;" /></a>
+    <div id="bg">
+        <img src="https://drive.google.com/uc?export=view&id=1QG2nWFfnHn1JVosz_VIdd7O5zwB_dF-A" alt="">
     </div>
 
-    <div class="row">
-        <div class="col mb-3">
-            <label for="firstName" class="form-label">First Name</label>
-            <input 
-            type="text" 
+        <div class="container">
+        <form class="form"
+            #form="ngForm"
+            method="post"
             action="register"
-            class="form-control" 
-            id="firstName"
-            name="firstName"
-            [(ngModel)]="user.firstName"
+            (ngSubmit)="onClickSubmit()"
+        >
+            <h2>CREATE ACCOUNT</h2>
+
+            <label for="email" class="form-label">Email</label>
+            <input type="email"
+                   placeholder="Email address"
+                   action="register"
+                   class="form-control"
+                   id="email"
+                   name="email"
+                   [(ngModel)]="user.email"
+                   required
+            >
+            <label for="password" class="form-label">Password</label>
+            <input
+            type="password"
+            placeholder="Password"
+            action="register"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
             required
             >
-        </div>
-        <div class="col mb-3">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input 
-            type="text"
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input
+            type="password"
+            placeholder="Password"
             action="register"
-            class="form-control" 
-            id="lastName"
-            name="lastName"
-            [(ngModel)]="user.lastName"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            [(ngModel)]="user.confirmPassword"
             required
             >
-        </div>
-    </div>
-    <div class="row">
-        <div class="col mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input 
-        type="text"
-        action="register"
-        class="form-control" 
-        id="email"
-        name="email"
-        [(ngModel)]="user.email"
-        required
-        >
-        <div class="form-text"></div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col mb-3">
-        <label for="password"
-        class="form-label">Password</label>
-        <input 
-        type="password" 
-        class="form-control" 
-        id="password"
-        name="password"
-        [(ngModel)]="user.password"
-        required
-        >
-        <div class="form-text"></div>
-        </div>
-        
-    <div class="col mb-3">
-        <label for="confirmPassword" class="form-label">Confirm Password</label>
-        <input 
-        type="password" 
-        class="form-control" 
-        id="confirmPassword"
-        name="confirmPassword"
-        [(ngModel)]="user.confirmPassword"
-        required
-        >
-        <div class="form-text"></div>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col-6-offset-3">
-            <div class="d-grid">
+            <h3>Already a member?<a href="#" class="link-primary" id class="signup" >Sign in</a></h3>
+
+            <div class="btn-box">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </div>
-    </div>
 
-    
+
 </form>
-
-
-<router-outlet></router-outlet> 
+    </div>
+<router-outlet></router-outlet>
