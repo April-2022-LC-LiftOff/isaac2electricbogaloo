@@ -1,6 +1,7 @@
 package org.launchcode.pandaplanner.auth.controllers;
 
 import org.launchcode.pandaplanner.auth.data.UserRepository;
+import org.launchcode.pandaplanner.auth.models.Pet;
 import org.launchcode.pandaplanner.auth.models.User;
 import org.launchcode.pandaplanner.auth.models.dto.LoginFormDTO;
 import org.launchcode.pandaplanner.auth.models.dto.RegisterFormDTO;
@@ -38,8 +39,7 @@ public class UserController {
         if (!password.equals(confirmPassword)) {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
-
-        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword());
+        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPet());
         userRepository.save(newUser);
 
         return ResponseEntity.ok(newUser);

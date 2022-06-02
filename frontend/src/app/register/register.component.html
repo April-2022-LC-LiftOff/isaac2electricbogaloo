@@ -44,6 +44,16 @@
             [(ngModel)]="user.confirmPassword"
             required
             >
+            <label>Select Your Pet:</label>
+                <select
+                        name="pet"
+                        [(ngModel)]="user.pet"
+                        required
+                >
+                    <option *ngFor="let p of pets">
+                        {{ p }}
+                    </option>
+                </select>
             <h3>Already a member?<a href="#" class="link-primary" id class="signup" >Sign in</a></h3>
 
             <div class="btn-box">

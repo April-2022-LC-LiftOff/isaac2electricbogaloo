@@ -14,8 +14,12 @@ export class RegisterComponent implements OnInit {
   user: User = {
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    pet: ""
   }
+
+  pets = ["Panda", "Racoon"];
+
   constructor(private router: Router, private registerService: RegisterService) { }
 
   ngOnInit():void {
