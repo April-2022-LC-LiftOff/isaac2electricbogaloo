@@ -1,2 +1,52 @@
 
     <a class="navbar-brand" routerLink="/home"> <img src="https://drive.google.com/uc?export=view&id=1t_2e6E6NGZ0ydCpviCXZI-NHKJulFXs7"alt="logo" style="width:5em; height:5em;" /></a>
+    <div id="bg">
+        <img src="https://drive.google.com/uc?export=view&id=1QG2nWFfnHn1JVosz_VIdd7O5zwB_dF-A" alt="">
+    </div>
+
+    <div class="container">
+        <form
+                #form="ngForm"
+                method="post"
+                action="signin"
+                (ngSubmit)="onClickSubmit()"
+        >
+
+
+            <h2>WELCOME BACK!</h2>
+
+            <label for="email" class="form-label"></label>
+            <input type="text"
+                   placeholder="Email address"
+                   class="form-control"
+                   id="email"
+                   name="email"
+                   [(ngModel)]="signinUser.email"
+                   required
+            />
+            <label for="password" class="form-label"></label>
+            <input
+                    type="password"
+                    placeholder="Password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    [(ngModel)]="signinUser.password"
+                    required
+            />
+
+            <a href="#" class="link-primary">Forgot Password</a>
+            <div class ="sgn-btn">
+                <h3>No account?<a href="#" class="link-primary" id class="signup" >Sign up</a></h3>
+            </div>
+
+            <div class="btn-box">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <router-outlet></router-outlet>

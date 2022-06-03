@@ -1,0 +1,124 @@
+
+@import
+url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&display=swap" rel="stylesheet');
+
+
+.container{
+  width: 360px;
+  height: 500px;
+  margin: 8% auto;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -1;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
+
+  .container form{
+    width: 280px;
+    position: absolute;
+    top: 100px;
+    left:40px;
+  }
+
+  .container h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size:30PX;
+  }
+  .container h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+
+  }
+
+  form input{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 2;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .btn-box{
+    width:100%;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  form button{
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #ff10ab,#ffad06);
+    border-radius: 30px;
+    border:0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+#Form2{
+   left:450px;
+  }
+  .container Banner{
+    height: 20px;
+    width: 120px
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

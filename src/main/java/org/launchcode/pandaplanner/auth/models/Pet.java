@@ -6,8 +6,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class Pet extends AbstractEntity {
 
-//    @OneToOne(mappedBy = "user")
-//    private User user;
+    @OneToOne(mappedBy = "pet")
+    private User user;
 
     private String petName;
 

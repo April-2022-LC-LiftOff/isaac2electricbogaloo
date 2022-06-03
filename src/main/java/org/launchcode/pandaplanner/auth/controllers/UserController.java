@@ -1,7 +1,9 @@
 package org.launchcode.pandaplanner.auth.controllers;
 
 import org.launchcode.pandaplanner.auth.data.UserRepository;
+import org.launchcode.pandaplanner.auth.models.Pet;
 import org.launchcode.pandaplanner.auth.models.User;
+import org.launchcode.pandaplanner.auth.models.dto.LoginFormDTO;
 import org.launchcode.pandaplanner.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<Object> processUserForm(@RequestBody @Valid RegisterFormDTO registerFormDTO,
-                                                          Errors errors, HttpServletRequest request) {
+                                                  Errors errors, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().body("Has Errors");
@@ -38,8 +40,8 @@ public class UserController {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
-        User newUser = new User(registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPumpkins());
-        newUser.setPumpkins(10);
+        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPet());
+
         userRepository.save(newUser);
 
         //I would make a Pet here like:
@@ -52,6 +54,36 @@ public class UserController {
         * */
 
         return ResponseEntity.ok(newUser);
+
     }
 
+
+
+    @PostMapping("/signin")
+    public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
+                                   Errors errors, HttpServletRequest request) {
+
+
+        if (errors.hasErrors()) {
+            return ResponseEntity.badRequest().body("Has Errors");
+        }
+
+        User theUser = userRepository.findByEmail(loginFormDTO.getEmail());
+
+        if (theUser == null) {
+            errors.rejectValue("email", "user.invalid", "The given email does not exist");
+            return ResponseEntity.badRequest().body("Create an account");
+        }
+
+        String password = loginFormDTO.getPassword();
+
+        if (!theUser.isMatchingPassword(password)) {
+            errors.rejectValue("password", "password.invalid", "Invalid password");
+               return  ResponseEntity.badRequest().body("Password is invalid");
+        }
+
+        //setUserInSession(request.getSession(), theUser);
+
+        return ResponseEntity.ok(theUser);
+   }
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'nav', component: NavbarComponent },
   { path: 'footer', component: FooterComponent },
-  {path: 'signin', component: SignInComponent }
+  { path: 'signin', component: SignInComponent }
 
 ];
 

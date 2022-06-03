@@ -1,75 +1,18 @@
 package org.launchcode.pandaplanner.auth.models.dto;
 
 
+import org.launchcode.pandaplanner.auth.models.Pet;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.launchcode.pandaplanner.auth.models.User;
 import javax.validation.constraints.NotNull;
 
-public class RegisterFormDTO {
-
-    @NotNull
-    private String firstName;
-
-    @NotNull
-    private String lastName;
-
-    @NotNull
-    private String email;
-
-    @NotNull
-    private String password;
+public class RegisterFormDTO extends LoginFormDTO {
 
     private String confirmPassword;
 
-    @NotNull
-    private int pumpkins;
+    private Pet pet;
 
-    /*
 
-    **Kole's ideas for Pet object: **
-
-    @NotNull
-    private String petName;
-
-    @NotNull
-    private String petType;
-
-    and then just generate getters and setters for these.
-    the function to create a pet object has also been suggested via comments in userController.Java
-
-     */
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getConfirmPassword() {
         return confirmPassword;
@@ -79,11 +22,10 @@ public class RegisterFormDTO {
         this.confirmPassword = confirmPassword;
     }
 
-    public int getPumpkins() {
-        return pumpkins;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPumpkins(int pumpkins) {
-        this.pumpkins = pumpkins;
-    }
+    public void setPet(Pet pet) {
+        this.pet = pet;
 }
