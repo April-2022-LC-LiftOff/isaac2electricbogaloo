@@ -10,12 +10,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, 
+    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, TodoListComponent, 
   ],
   imports: [
     BrowserModule,
