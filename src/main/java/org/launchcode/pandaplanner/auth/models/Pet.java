@@ -9,13 +9,24 @@ public class Pet extends AbstractEntity {
 //    @OneToOne(mappedBy = "user")
 //    private User user;
 
+    private String petName;
+
     private String type;
 
-    public Pet(String type) {
+    public Pet(String petName, String type) {
+        this.petName = petName;
         this.type = type;
     }
 
     public Pet() {}
+
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
+    }
 
     public String getType() {
         return type;
