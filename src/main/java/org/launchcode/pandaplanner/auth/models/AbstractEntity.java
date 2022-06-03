@@ -14,6 +14,7 @@ public class AbstractEntity {
     private int id;
 
     private String name;
+    //***names are being handled differently right now; having abstractEntity hold the name is later version update.***
 
     public int getId() {
         return id;

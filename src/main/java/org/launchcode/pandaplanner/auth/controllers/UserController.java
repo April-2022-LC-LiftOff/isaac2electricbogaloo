@@ -39,8 +39,19 @@ public class UserController {
         if (!password.equals(confirmPassword)) {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
+
         User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPet());
+
         userRepository.save(newUser);
+
+        //I would make a Pet here like:
+        /*
+        *   Pet newPet = new Pet(registerFormDTO.getPetName(), registerFormDTO.getPetType());
+        *   petRepository.save(newPet);
+        *
+        *  I also added via comment a way to do the strings in RegisterFormDTO.Java --NM
+        *
+        * */
 
         return ResponseEntity.ok(newUser);
 
