@@ -12,12 +12,6 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class User extends AbstractEntity {
 
-    @OneToOne
-    public Pet pet;
-    //connects one pet objects to each instance of a user object
-    //cascade makes it so if a user object is changed the pet object is changed in the same way
-
-
     @NotNull
     private String email;
 
@@ -25,7 +19,6 @@ public class User extends AbstractEntity {
     private String pwHash;
 
     @NotNull
-
     @OneToOne(cascade= CascadeType.ALL)
     private Pet pet;
 
