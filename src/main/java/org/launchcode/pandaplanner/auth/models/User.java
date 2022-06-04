@@ -6,17 +6,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User extends AbstractEntity {
-
-    @OneToOne
-    public Pet pet;
-    //connects one pet objects to each instance of a user object
-    //cascade makes it so if a user object is changed the pet object is changed in the same way
-
 
     @NotNull
     private String email;
@@ -30,6 +27,9 @@ public class User extends AbstractEntity {
     private Pet pet;
 
     private int pumpkins;
+
+    @OneToMany(mappedBy = "description")
+    private List<ToDo> toDoList = new ArrayList<>();
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
