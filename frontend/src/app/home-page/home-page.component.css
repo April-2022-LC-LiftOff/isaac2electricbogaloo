@@ -1,45 +1,74 @@
 .banner{
-    background-image: url('../../img/pandabackground.jpg');
-    height: 1200px;
+    background-image: url("https://drive.google.com/uc?export=view&id=1Zp_3kOQ_SyyfNA-BndXCGyuvoid6sTvo");
+    height: 900px;
     background-position: center;
     background-size: cover;
-
+}
+.content{
+position: relative;
+width: 100%;
+display:flex;
+justify-content: space-between;
+align-items: center;
 
 
 }
-h1{
+
+.content .textbox{
+    position: relative;
+    max-width: 600px;
+}
+
+
+.content h1{
     font-weight: bold;
-    font-size: 300px;
+    font-size: 200px;
     color: rgb(57, 53, 53);
-    padding: 100px;
-    position: center;
-    left: auto
+    margin-left: 25%;
     
 }
+.content h2{
+    font-weight: bold;
+    font-size: 56px;
+    margin-left: 25%;
+    color:purple;
+}
 
- h2{
-    text-align: center;
-} 
+.content .textbox p{
+    margin-left: 25%;
 
+}
 .sign-up-button{
-    margin-left: 59%;
+    margin-left: 5%;
     color: #fff;
     border-radius: 5px;
+    margin-left: 25%;
     
  }
 
- .content a:hover{
-     background-color: var(--primary-color);
+ /* .content .textbox a{
+     display:inline-block;
+     margin-top: 20px;
+     padding: 8px 200px;
+     background: purple;
+     color: #fff;
+     border-radius: 4px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     text-decoration: none;
+
+ } */
+ .sign-up-button a:hover{
+     background-color: gray;
      color: #fff;
  }
 
 .stepBox{
-    background-color: rgb(44, 98, 44);
-    padding: 10px 30px;
+    background-color: rgb(101, 167, 19);
+    padding: 100px 70px;
     border-radius: 10px;
     text-align: center;
     margin: 10%;
-    /* background: url("https://drive.google.com/uc?export=view&id=1DRdKtOhOEDyc8vGRSvURYJRiCFgK66fO"); */
     background-size: 100%;
 }
 .stepBox h1{

@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
         console.log(`user signed in: ${JSON.stringify(savedUser)}`);
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/toDo"]);
       },
       (e) => {
         console.error("Error adding user " + JSON.stringify(e));

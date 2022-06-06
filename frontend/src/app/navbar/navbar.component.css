@@ -3,11 +3,12 @@
 
  .navbar-nav {
     margin-left: auto;
+    height: 1%;
 }
 
 .navbar{
     box-shadow:0px 2px 5px #777;
-    height: 5%;
+    height: 1%;
 }
 
 .img{

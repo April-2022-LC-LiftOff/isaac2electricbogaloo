@@ -1,6 +1,13 @@
 <app-navbar></app-navbar>
+<div id="bg">
+    <img src="https://drive.google.com/uc?export=view&id=1QG2nWFfnHn1JVosz_VIdd7O5zwB_dF-A" alt="">
+</div>
+
+
+
 
 <div class="container">
+    <h2>Add a task</h2>
   <form
     class="form"
     #form="ngForm"
@@ -23,7 +30,7 @@
       />
     </div>
     <div>
-      <label for="dayToDo">What day do you want to do this?</label>
+      <label for="dayToDo">Choose a day</label>
 
       <select name="month" id="month" [(ngModel)]="date.month">
         <option *ngFor="let mon of months">{{ mon }}</option>
@@ -39,7 +46,7 @@
     </div>
 
     <div>
-      <label for="timeToDo">What time do you want to do this?</label>
+      <label for="timeToDo">Choose a time</label>
 
       <select name="hour" id="hour" [(ngModel)]="time.hour">
         <option *ngFor="let hr of hours">{{ hr }}</option>
@@ -55,7 +62,7 @@
     </div>
 
     <div class="btn-box">
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button type="submit" routerLink="/dashboard"class="btn btn-secondary btn-lg">Create</button>
     </div>
   </form>
 </div>
