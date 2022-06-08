@@ -11,8 +11,7 @@ import java.util.HashMap;
 @Entity
 public class ToDo extends AbstractEntity{
 
-    @ManyToOne
-    private User user;
+    private int userId;
 
     @NotNull
     private String description;
@@ -32,6 +31,14 @@ public class ToDo extends AbstractEntity{
         this.dayToDo = dayToDo;
         this.timeToDo = timeToDo;
         this.isCompleted = false;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getDescription() {

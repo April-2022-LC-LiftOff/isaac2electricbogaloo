@@ -13,7 +13,7 @@ public class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    private String name;
+//    private String name;
     //***names are being handled differently right now; having abstractEntity hold the name is later version update.***
 
     public int getId() {
@@ -24,13 +24,13 @@ public class AbstractEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     @Override
     public boolean equals(Object o) {

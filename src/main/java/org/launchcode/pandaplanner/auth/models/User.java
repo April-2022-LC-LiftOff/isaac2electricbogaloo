@@ -21,26 +21,21 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
-    @NotNull
-
-    @OneToOne(cascade= CascadeType.ALL)
-    private Pet pet;
+    private String petType;
 
     private int pumpkins;
 
-    @OneToMany(mappedBy = "description")
-    private List<ToDo> toDoList = new ArrayList<>();
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {}
 
 
-    public User( String email, String password, Pet pet) {
+    public User( String email, String password, String petType) {
         this.email = email;
         this.pwHash = encoder.encode(password);
-        this.pet = pet;
-         this.pumpkins = 10;
+        this.petType = petType;
+        this.pumpkins = 10;
 
     }
 
@@ -48,12 +43,12 @@ public class User extends AbstractEntity {
         return email;
     }
 
-    public Pet getPet() {
-        return pet;
+    public String getPetType() {
+        return petType;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPetType(String petType) {
+        this.petType = petType;
     }
 
     public boolean isMatchingPassword(String password) {

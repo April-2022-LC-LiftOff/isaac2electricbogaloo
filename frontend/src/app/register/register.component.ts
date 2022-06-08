@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     email: "",
     password: "",
     confirmPassword: "",
-    pet: ""
+    petType: ""
   }
 
   pets = ["Panda", "Racoon"];
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
         console.log(`user signed in: ${JSON.stringify(savedUser)}`);
-        this.router.navigate(["/toDo"]);
+        this.router.navigate(["/signin"]);
       },
       (e) => {
         console.error("Error adding user " + JSON.stringify(e));

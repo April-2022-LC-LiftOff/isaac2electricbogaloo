@@ -9,8 +9,8 @@ import java.time.LocalTime;
 
 public class ToDoFormDTO {
 
+
     @NotNull
-    @ManyToOne
     private String description;
 
     @NotNull

@@ -14,7 +14,7 @@ export class ToDoComponent implements OnInit {
     description: "",
     dayToDo: "",
     timeToDo: "",
-    isCompleted: false,
+    completed: false,
   } 
   
   date = {
@@ -58,7 +58,7 @@ export class ToDoComponent implements OnInit {
     this.toDoService.addToDo(this.toDo).subscribe(
       (savedToDo) => {
         console.log(`toDo added: ${JSON.stringify(savedToDo)}`);
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/dashboard"]);
       },
       (e) => {
         console.error("Error adding ToDo " + JSON.stringify(e));

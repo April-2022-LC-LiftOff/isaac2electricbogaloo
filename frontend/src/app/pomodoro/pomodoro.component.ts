@@ -3,7 +3,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import{trigger,state,style,animate,transition} from '@angular/animations'
-import { countReset } from 'console';
+// import { countReset } from 'console';
 
 @Component({
   selector: 'app-pomodoro',

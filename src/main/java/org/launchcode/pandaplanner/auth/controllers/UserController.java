@@ -1,5 +1,6 @@
 package org.launchcode.pandaplanner.auth.controllers;
 
+import org.launchcode.pandaplanner.auth.data.PetRepository;
 import org.launchcode.pandaplanner.auth.data.UserRepository;
 import org.launchcode.pandaplanner.auth.models.Pet;
 import org.launchcode.pandaplanner.auth.models.User;
@@ -11,7 +12,9 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -19,6 +22,30 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PetRepository petRepository;
+
+    private static final String userSessionKey = "user";
+
+    public User getUserFromSession(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        if (userId == null) {
+            return null;
+        }
+
+        Optional<User> user = userRepository.findById(userId);
+
+        if (user.isEmpty()) {
+            return null;
+        }
+
+        return user.get();
+    }
+
+    private static void setUserInSession(HttpSession session, User user) {
+        session.setAttribute(userSessionKey, user.getId());
+    }
 
     @PostMapping("/register")
     public ResponseEntity<Object> processUserForm(@RequestBody @Valid RegisterFormDTO registerFormDTO,
@@ -40,9 +67,13 @@ public class UserController {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
-        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPet());
-
+        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPetType());
         userRepository.save(newUser);
+
+        Pet newPet = new Pet(registerFormDTO.getPetType());
+        newPet.setUserId(newUser.getId());
+        petRepository.save(newPet);
+
 
         //I would make a Pet here like:
         /*
@@ -52,7 +83,7 @@ public class UserController {
         *  I also added via comment a way to do the strings in RegisterFormDTO.Java --NM
         *
         * */
-
+        setUserInSession(request.getSession(), newUser);
         return ResponseEntity.ok(newUser);
 
     }
@@ -82,7 +113,7 @@ public class UserController {
                return  ResponseEntity.badRequest().body("Password is invalid");
         }
 
-        //setUserInSession(request.getSession(), theUser);
+        setUserInSession(request.getSession(), theUser);
 
         return ResponseEntity.ok(theUser);
    }
