@@ -1,0 +1,22 @@
+<ng-container *ngIf="this.pet">
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      id="progress-bar"
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      {{this.pet.hungerLevel*10}}%
+    </div>
+  </div>
+  <div>
+    <button type="button" (click)="feedPet()">+</button>
+  </div>
+
+  <div>
+    <h3>Your Pet's Mood: {{this.pet.mood}}</h3>
+</div>
+</ng-container>
+

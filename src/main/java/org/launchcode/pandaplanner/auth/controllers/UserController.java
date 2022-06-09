@@ -1,5 +1,6 @@
 package org.launchcode.pandaplanner.auth.controllers;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.launchcode.pandaplanner.auth.data.PetRepository;
 import org.launchcode.pandaplanner.auth.data.UserRepository;
 import org.launchcode.pandaplanner.auth.models.Pet;
@@ -7,10 +8,11 @@ import org.launchcode.pandaplanner.auth.models.User;
 import org.launchcode.pandaplanner.auth.models.dto.LoginFormDTO;
 import org.launchcode.pandaplanner.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.endpoint.SecurityContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.http.HttpStatus;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -26,7 +28,7 @@ public class UserController {
     @Autowired
     private PetRepository petRepository;
 
-    private static final String userSessionKey = "user";
+    private static final String userSessionKey = "test";
 
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
@@ -72,17 +74,9 @@ public class UserController {
 
         Pet newPet = new Pet(registerFormDTO.getPetType());
         newPet.setUserId(newUser.getId());
+        newPet.setMood("Chilling");
         petRepository.save(newPet);
 
-
-        //I would make a Pet here like:
-        /*
-        *   Pet newPet = new Pet(registerFormDTO.getPetName(), registerFormDTO.getPetType());
-        *   petRepository.save(newPet);
-        *
-        *  I also added via comment a way to do the strings in RegisterFormDTO.Java --NM
-        *
-        * */
         setUserInSession(request.getSession(), newUser);
         return ResponseEntity.ok(newUser);
 
@@ -117,4 +111,13 @@ public class UserController {
 
         return ResponseEntity.ok(theUser);
    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Object> logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return ResponseEntity.ok().build();
+    }
+
+
+
 }

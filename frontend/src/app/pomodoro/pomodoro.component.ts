@@ -64,23 +64,50 @@ decreaseBreakTime(){
 }
 
 start(){
-this.interval = setInterval(()=> counter(),1000)
+  this.playWork();
+  this.interval = setInterval(()=> counter(),1000)
 const counter =()=>{
-  this.seconds --
-  if(this.seconds == -1){
-    this.minutes --
-
-  if(this.minutes == -1){
-    this.message = "Great job"
-  }
-  }
+if(this.message=="Break Time" && this.minutes==0 && this.seconds==0){
+  this.message = "Get to work!";
+  this.playWork();
+  this.minutes = this.workDuration;
+  this.seconds = 0;
 }
-//  stop(){
-//    this.interval  = setInterval(()=> counter(),1000)
-//    clearInterval(interval)
-//  }
+else if(this.minutes == 0 && this.seconds==0){
+  this.message = "Great job";
+  this.minutes = this.breakDuration;
+  this.seconds = 0;
+  this.message = "Break Time";
+  this.playGood();
+}
+else if(this.seconds == 0){
+  this.seconds=59;
+  this.minutes --
+}
+else{
+  this.seconds --
+}
 
+};
 
+}
+stop() {
+clearInterval(this.interval);
+
+};
+
+playGood() {
+let audio = new Audio();
+audio.src = "../../assets/GoodJob.wav";
+audio.load();
+audio.play();
+}
+
+playWork() {
+let audio = new Audio();
+audio.src = "../../assets/GetToWork.wav";
+audio.load();
+audio.play();
 }
 
   constructor() { }

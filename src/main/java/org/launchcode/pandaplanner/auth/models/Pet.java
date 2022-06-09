@@ -16,6 +16,8 @@ public class Pet extends AbstractEntity {
     @NotNull
     private int hungerLevel;
 
+    private String mood;
+
     public Pet(String type) {
         this.type = type;
         this.hungerLevel = 5;
@@ -53,5 +55,13 @@ public class Pet extends AbstractEntity {
 
     public void setHungerLevel(int hungerLevel) {
         this.hungerLevel = hungerLevel;
+    }
+
+    public String getMood() {
+        return mood;
+    }
+
+    public void setMood(String mood) {
+        this.mood = mood;
     }
 }

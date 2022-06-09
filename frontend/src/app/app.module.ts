@@ -14,12 +14,15 @@ import { ToDoComponent } from './toDo/toDo.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PomodoroComponent } from './pomodoro/pomodoro.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PetComponent } from './pet/pet.component';
+import { LogoutComponent } from './logout/logout.component';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, ToDoComponent, SettingsComponent, PomodoroComponent, DashboardComponent, 
+    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, ToDoComponent, SettingsComponent, PomodoroComponent, DashboardComponent, PetComponent, LogoutComponent, 
   ],
   imports: [
     BrowserModule,

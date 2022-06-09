@@ -1,8 +1,10 @@
-.banner{
-    background-image: url("https://drive.google.com/uc?export=view&id=1Zp_3kOQ_SyyfNA-BndXCGyuvoid6sTvo");
-    height: 900px;
+  .banner{
+    background-image: url("https://drive.google.com/uc?export=view&id=1ZoCytet0ChQWGbhsk1SUiWmFZKZCEYMm");
+    height: 1200px;
+    width: 2000px;
     background-position: center;
     background-size: cover;
+   
 }
 .content{
 position: relative;
@@ -17,59 +19,61 @@ align-items: center;
 .content .textbox{
     position: relative;
     max-width: 600px;
+  margin-left: 12%;
+  margin-top: 10%;
 }
 
 
-.content h1{
-    font-weight: bold;
-    font-size: 200px;
-    color: rgb(57, 53, 53);
-    margin-left: 25%;
-    
-}
+
 .content h2{
     font-weight: bold;
-    font-size: 56px;
-    margin-left: 25%;
-    color:purple;
+    font-size: 70px;
+    margin-left: 5%;
+    color:#4A2E6F
+
 }
 
 .content .textbox p{
-    margin-left: 25%;
+    margin-left: 5%;
+    
 
 }
 .sign-up-button{
     margin-left: 5%;
-    color: #fff;
     border-radius: 5px;
-    margin-left: 25%;
+    margin-left: 5%;
     
  }
 
- /* .content .textbox a{
-     display:inline-block;
-     margin-top: 20px;
-     padding: 8px 200px;
-     background: purple;
-     color: #fff;
-     border-radius: 4px;
-     font-weight: 500;
-     letter-spacing: 1px;
+  .content .textbox a{
      text-decoration: none;
+    text-transform: uppercase;
+    background-color:#47C365;
+    color: black;
+    padding: 20px 30px;
+    display: inline-block;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 25px;
 
- } */
- .sign-up-button a:hover{
-     background-color: gray;
-     color: #fff;
+ } 
+ .content .textbox a:hover{
+     background-color:#7ED957;
+   
+ }  
+
+ .content .textbox p{
+    margin-right: 25%;
  }
 
 .stepBox{
-    background-color: rgb(101, 167, 19);
-    padding: 100px 70px;
+    background-color: #6F5ACD;
+    padding: 100px 100px;
     border-radius: 10px;
     text-align: center;
-    margin: 10%;
+    margin: 100%;
     background-size: 100%;
+    display: inline-block;
 }
 .stepBox h1{
     color: purple;
@@ -84,4 +88,95 @@ align-items: center;
 }
 .text-center{
     font-size: 24px;
+} 
+
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#6F5ACD;
 }
+.container{
+    width: 20%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    align-items:left;
+    justify-content: center;
+}
+
+/* 
+.right{
+    width: 20%;
+    min-height: 100px;
+    background-color:transparent;
+     display: flex;
+     align-items: left;
+    border-radius: 8px;
+    justify-content: left;
+    padding: 30px;
+    border-radius: 8px;
+    margin-left: -150px;
+    margin-top: 150%;
+    
+   }
+
+   .right h1{
+    color: #6F5ACD;   
+    font-size: 200px;
+       font-weight: bold;
+   }
+.right p{
+    margin: 20px 0;
+    font-weight: 500;
+    line-height: 80px;
+    font-size: 50px;
+
+}
+
+.right a{
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: bisque;
+    color: black;
+    padding: 20px 30px;
+    display: inline-block;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+}
+.right a:hover{
+    background-color: #6F5ACD;
+}
+.container2{
+    width:90%;
+    max-width: 1000px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info{
+    width: 90%;
+    min-height: 100px;
+    background-color:#9488c7;
+    border-radius: 8px;
+
+    
+   }
+
+   .info2{
+       width:50%;
+       background-color:#6F5ACD;
+       min-height: 400px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 30px;
+       border-radius: 8px;
+       margin-left: -150;
+   } */
