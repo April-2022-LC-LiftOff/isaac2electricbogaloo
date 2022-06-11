@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'; 
+import {Router, NavigationEnd} from '@angular/router';
 import { ToDo } from './toDo';
 import { ToDoService } from './toDo.service';
+import { Pet } from "../pet/pet";
+import { PetService } from "../pet/pet.service";
+import { UserPumpkinsService } from '../user-pumpkins/user-pumpkins.service';
+import {User} from '../register/registerUser';
 
 @Component({
   selector: 'app-toDo',
@@ -10,12 +14,35 @@ import { ToDoService } from './toDo.service';
 })
 export class ToDoComponent implements OnInit {
 
-  toDo: ToDo = {
-    description: "",
-    dayToDo: "",
-    timeToDo: "",
-    completed: false,
-  } 
+    pet = {
+      type: "Panda",
+      hungerLevel: 5,
+      mood: "Chilling",
+    };
+
+    elem;
+
+    toDos: ToDo[] = [];
+
+       toDo: ToDo = {
+          description: "",
+          dayToDo: "",
+          timeToDo: "",
+          completed: false,
+         } ;
+
+      currentToDo = null;
+      currentIndex = -1;
+
+      user: User = {
+        email: "",
+        password: "",
+        confirmPassword: "",
+        type: "",
+        pumpkins: 0,
+      };
+
+      someSubscription: any;
   
   date = {
     year: "",
@@ -42,10 +69,38 @@ export class ToDoComponent implements OnInit {
 
   dayOrNights = ["AM", "PM"];
 
-  constructor(private router: Router, private toDoService: ToDoService) { }
+
+  constructor(
+  private router: Router,
+  private toDoService: ToDoService,
+  private userPumpkinsService: UserPumpkinsService,
+  private petService: PetService,
+  ) {
+   this.router.routeReuseStrategy.shouldReuseRoute = function () {
+          return false;
+        };
+        this.someSubscription = this.router.events.subscribe((event) => {
+          if (event instanceof NavigationEnd) {
+            // Here is the dashing line comes in the picture.
+            // You need to tell the router that, you didn't visit or load the page previously, so mark the navigated flag to false as below.
+            this.router.navigated = false;
+          }
+        });
+   }
 
   
   ngOnInit():void {
+      const toDosObservable = this.toDoService.getAllToDos();
+           toDosObservable.subscribe((toDosData: ToDo[]) => {
+               this.toDos = toDosData;
+               console.log(`toDo completed: ${JSON.stringify(this.toDos[0].completed)}`);
+           });
+
+      const userObservable = this.userPumpkinsService.getUserPumpkins();
+                   userObservable.subscribe((userData: User) => {
+                       this.user = userData;
+                       console.log(`current pumpkins: ${JSON.stringify(this.user.pumpkins)}`);
+                   });
   }
 
   onClickSubmit(): void {
@@ -67,3 +122,4 @@ export class ToDoComponent implements OnInit {
   }
 
 }
+

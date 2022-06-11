@@ -8,7 +8,7 @@
     <section class="position" [@pageNumber]="pageNumber">
     
         <div class="flex">
-        <h1 class="title">Focus time</h1>
+        <h1 class="title">FOCUS TIME</h1>
         <div class="counter">
          <button (click)="decreaseFocusTime()"type="button">-</button>
         <div>{{workDuration}}</div>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="flex">
-    <h1 class="title">Short Break</h1>
+    <h1 class="title">SHORT BREAK</h1>
     <div class="counter">
      <button (click)="decreaseBreakTime()"type="button">-</button>
     <div>{{breakDuration}}</div>
@@ -45,52 +45,10 @@
 
 </div>
 </div>
-<div class="container">
-    <section class= "one">
-<h2>An online Pomodoro Timer to boost your productivity
-    </h2>
 
-    <h3>What is the Pomodoro Timer? </h3>
-
-    
-    <p>
-        Panda planner's customizable pomodoro timer works on desktop & mobile browser.
-         The aim of this app is to help you focus on any task you are working on, such as study,
-          writing, or coding. This app is inspired by Pomodoro Technique which is a time management 
-          method developed by Francesco Cirillo.</p>
-        </section>
-    <section class="two">
-        <h3>What is the Pomodoro Technique?</h3>
-        
-      
-        <p>The Pomodoro Technique is created by Francesco Cirillo<br> 
-        for a more productive way to work and study.<br>The technique uses a timer 
-        to break down work into intervals, traditionally 25 minutes in length, 
-        separated by short breaks. Each interval is known as a pomodoro, from 
-        the Italian word for 'tomato', after the tomato-shaped kitchen timer 
-        that Cirillo used.</p> 
-        </section>
-        <section class="three"> 
-            <h3>How to use the Pomodoro Timer?</h3>
-        
-   
-        <ul>
-            <li>  Add tasks to work on today</li>
-            <li>  Set estimate pomodoros (1 = 25min of work) for each tasks</li>
-            <li>Select a task to work on</li>
-            <li> Start timer and focus on the task for 25 minutes</li>
-            <li>   Take a break for 5 minutes when the alarm ring</li>
-            <li> Iterate 3-5 until you finish the tasks</li>
-        </ul>
-        
- 
-
-</section>
- 
-
-</div>
+ <app-footer></app-footer>
 
 <router-outlet></router-outlet>
 
 
-<app-footer></app-footer>
+

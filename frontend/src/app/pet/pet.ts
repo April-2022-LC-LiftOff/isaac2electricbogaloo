@@ -1,5 +1,5 @@
 export interface Pet {
-    petType: string;
+    type: string;
     hungerLevel: number;
     mood: string;
 }

@@ -16,13 +16,14 @@ import { PomodoroComponent } from './pomodoro/pomodoro.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PetComponent } from './pet/pet.component';
 import { LogoutComponent } from './logout/logout.component';
+import { UserPumpkinsComponent } from './user-pumpkins/user-pumpkins.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, ToDoComponent, SettingsComponent, PomodoroComponent, DashboardComponent, PetComponent, LogoutComponent, 
+    AppComponent, HomePageComponent, RegisterComponent, NavbarComponent, FooterComponent, SignInComponent, ToDoComponent, SettingsComponent, PomodoroComponent, DashboardComponent, PetComponent, LogoutComponent, UserPumpkinsComponent, 
   ],
   imports: [
     BrowserModule,

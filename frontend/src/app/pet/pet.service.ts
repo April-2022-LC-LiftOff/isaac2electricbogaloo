@@ -17,10 +17,8 @@ export class PetService {
     )
   }
 
-  feed(pet): Observable<any> {
-    return this.http.put(
-      "http://localhost:8080/api/pet/feed", pet
-      );
+  feed(pet: Pet): Observable<any> {
+    return this.http.put("http://localhost:8080/api/pet/feed", pet);
   }
 
 }

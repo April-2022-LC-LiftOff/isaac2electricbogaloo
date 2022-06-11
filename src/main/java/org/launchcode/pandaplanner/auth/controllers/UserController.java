@@ -69,10 +69,10 @@ public class UserController {
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
-        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getPetType());
+        User newUser = new User(registerFormDTO.getEmail(), registerFormDTO.getPassword(), registerFormDTO.getType());
         userRepository.save(newUser);
 
-        Pet newPet = new Pet(registerFormDTO.getPetType());
+        Pet newPet = new Pet(registerFormDTO.getType());
         newPet.setUserId(newUser.getId());
         newPet.setMood("Chilling");
         petRepository.save(newPet);
@@ -86,7 +86,7 @@ public class UserController {
 
     @PostMapping("/signin")
     public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
-                                   Errors errors, HttpServletRequest request) {
+                                                   Errors errors, HttpServletRequest request) {
 
 
         if (errors.hasErrors()) {
@@ -104,18 +104,27 @@ public class UserController {
 
         if (!theUser.isMatchingPassword(password)) {
             errors.rejectValue("password", "password.invalid", "Invalid password");
-               return  ResponseEntity.badRequest().body("Password is invalid");
+            return  ResponseEntity.badRequest().body("Password is invalid");
         }
 
         setUserInSession(request.getSession(), theUser);
 
         return ResponseEntity.ok(theUser);
-   }
+    }
 
     @PostMapping("/logout")
     public ResponseEntity<Object> logout(HttpServletRequest request){
         request.getSession().invalidate();
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("user/pumpkins")
+    public ResponseEntity<Object> getUserPumpkins(HttpServletRequest request) {
+
+        HttpSession session = request.getSession();
+        User user = getUserFromSession(session);
+
+        return ResponseEntity.ok(user);
     }
 
 

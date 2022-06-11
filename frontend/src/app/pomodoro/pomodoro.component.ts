@@ -34,7 +34,7 @@ export class PomodoroComponent implements OnInit {
 pageNumber = 'one'
 workDuration = 25
 breakDuration = 5
-message = 'Get to work!'
+message = 'GET TO WORK!'
 minutes = this.workDuration -1
 seconds = 60
 interval: any = 0

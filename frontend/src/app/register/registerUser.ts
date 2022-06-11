@@ -2,5 +2,6 @@ export interface User {
     email: string;
     password: string;
     confirmPassword: string;
-    petType: string;
+    type: string;
+    pumpkins: number;
 }

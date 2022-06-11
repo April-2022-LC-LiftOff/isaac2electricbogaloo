@@ -21,7 +21,7 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
-    private String petType;
+    private String type;
 
     private int pumpkins;
 
@@ -34,7 +34,7 @@ public class User extends AbstractEntity {
     public User( String email, String password, String petType) {
         this.email = email;
         this.pwHash = encoder.encode(password);
-        this.petType = petType;
+        this.type = type;
         this.pumpkins = 10;
 
     }
@@ -43,12 +43,12 @@ public class User extends AbstractEntity {
         return email;
     }
 
-    public String getPetType() {
-        return petType;
+    public String getType() {
+        return type;
     }
 
-    public void setPetType(String petType) {
-        this.petType = petType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public boolean isMatchingPassword(String password) {

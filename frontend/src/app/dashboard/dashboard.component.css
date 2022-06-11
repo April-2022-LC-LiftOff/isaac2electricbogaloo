@@ -40,7 +40,14 @@ body{
 
 
 .todo-container {
-width: 100%;
+  width: 360px;
+  height: 600px;
+  margin: 8% auto;
+  background: white;
+  border-radius: 15px;
+  position: relative;
+  margin-right: 42%;
+  margin-top: 6%;
 }
 
 .todo-wrapper {

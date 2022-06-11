@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
     email: "",
     password: "",
     confirmPassword: "",
-    petType: ""
+    type: "",
+    pumpkins: 0,
   }
 
   pets = ["Panda", "Racoon"];

@@ -7,9 +7,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Pet extends AbstractEntity {
 
+    @NotNull
     private int userId;
 
-    private String petName;
+    //private String petName;
 
     private String type;
 
@@ -33,13 +34,13 @@ public class Pet extends AbstractEntity {
         this.userId = userId;
     }
 
-    public String getPetName() {
-        return petName;
-    }
-
-    public void setPetName(String petName) {
-        this.petName = petName;
-    }
+//    public String getPetName() {
+//        return petName;
+//    }
+//
+//    public void setPetName(String petName) {
+//        this.petName = petName;
+//    }
 
     public String getType() {
         return type;

@@ -1,11 +1,11 @@
 
-<a class="navbar-brand" routerLink="/home"> <img src="https://drive.google.com/uc?export=view&id=1t_2e6E6NGZ0ydCpviCXZI-NHKJulFXs7"alt="logo" style="width:5em; height:5em;" /></a>
+<a class="navbar-brand" routerLink="/home"> <img src="../../assets/img/navlogo.png"alt="logo" style="width:4em; height:4em;" /></a>
 <div id="bg">
-    <img src="https://drive.google.com/uc?export=view&id=1c0hLYATsrLOCRUwgeXSWc0xP6tgGTLeD" alt="">
+    <img src="../../assets/img/regbg.png" alt="">
 </div>
 
     <div id="bg">
-        <img src="../../assets/img/littleracc.gif" alt="">
+        <img src="../../assets/img/regbg.png" alt="">
     </div>
 
         <div class="container">
@@ -16,7 +16,7 @@
             (ngSubmit)="onClickSubmit()"
         >
             <h1>CREATE ACCOUNT</h1>
-            <h2> Get 10 reward points when you sign up today! </h2>
+            <h2> Get 10 points when you sign up today! </h2>
 
             <label for="email" class="form-label">Email</label>
             <input type="email"
@@ -52,8 +52,8 @@
             >
             <label>Select Your Pet:</label>
                 <select
-                        name="petType"
-                        [(ngModel)]="user.petType"
+                        name="type"
+                        [(ngModel)]="user.type"
                         required
                 >
                     <option *ngFor="let p of pets">

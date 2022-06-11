@@ -10,6 +10,7 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
   background: white;
   border-radius: 15px;
   position: relative;
+  margin-top: 9%;
 }
 
 
@@ -102,7 +103,11 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
 
 
 
-
+  .navbar-brand{
+    
+    margin-left: 1%
+  };
+  
 
 
 
