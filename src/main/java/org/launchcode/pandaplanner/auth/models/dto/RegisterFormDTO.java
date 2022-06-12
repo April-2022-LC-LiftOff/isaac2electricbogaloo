@@ -12,6 +12,7 @@ public class RegisterFormDTO extends LoginFormDTO {
 
     private String type;
 
+
     public String getConfirmPassword() {
         return confirmPassword;
     }
@@ -22,9 +23,9 @@ public class RegisterFormDTO extends LoginFormDTO {
 
     public String getType() {
         return type;
-    }
 
     public void setType(String type) {
         this.type = type;
     }
 }
+

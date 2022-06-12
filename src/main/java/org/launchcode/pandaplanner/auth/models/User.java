@@ -23,6 +23,7 @@ public class User extends AbstractEntity {
 
     private String type;
 
+
     private int pumpkins;
 
 
