@@ -22,7 +22,7 @@ public class RegisterFormDTO extends LoginFormDTO {
     }
 
     public String getType() {
-        return type;
+        return type;}
 
     public void setType(String type) {
         this.type = type;
