@@ -2,9 +2,22 @@
     width: 80%;
     border: 2px solid black;
     margin: 5px;
+    margin-top: 10%;
 }
 
 .progress-bar {
     color: white;
-    background-color: blueviolet;
+    background-color:orangered;
 }
+
+ .btn{
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: #6F5ACD;
+    border-radius: 30px;
+    border:0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    }

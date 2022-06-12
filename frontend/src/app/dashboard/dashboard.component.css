@@ -39,7 +39,7 @@ body{
 
 
 
-.todo-container {
+/* .todo-container {
   width: 360px;
   height: 600px;
   margin: 8% auto;
@@ -48,7 +48,7 @@ body{
   position: relative;
   margin-right: 42%;
   margin-top: 6%;
-}
+} */
 
 .todo-wrapper {
 display: inline-block;

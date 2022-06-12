@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     pumpkins: 0,
   }
 
-  pets = ["Panda", "Racoon"];
+  pets = ["Panda", "Bunny", "penguin"];
 
   constructor(private router: Router, private registerService: RegisterService) { }
 
