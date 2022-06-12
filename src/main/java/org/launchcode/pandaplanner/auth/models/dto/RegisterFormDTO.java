@@ -10,7 +10,7 @@ public class RegisterFormDTO extends LoginFormDTO {
 
     private String confirmPassword;
 
-    private Pet pet;
+    private String type;
 
 
     public String getConfirmPassword() {
@@ -21,11 +21,11 @@ public class RegisterFormDTO extends LoginFormDTO {
         this.confirmPassword = confirmPassword;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
+    public String getType() {
+        return type;
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setType(String type) {
+        this.type = type;
     }
 }
+

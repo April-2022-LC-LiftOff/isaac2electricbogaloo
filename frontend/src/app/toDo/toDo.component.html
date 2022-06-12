@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+
+<div id="bg">
+    <img src="https://drive.google.com/uc?export=view&id=1QG2nWFfnHn1JVosz_VIdd7O5zwB_dF-A" alt="">
+</div>
+
+
+
+
+<div class="container">
+    <h2>Add a task</h2>
+  <form
+    class="form"
+    #form="ngForm"
+    method="post"
+    action="createToDo"
+    (ngSubmit)="onClickSubmit()"
+  >
+    <div>
+      <label for="description" class="form-label"
+        >What do you want to do?</label
+      >
+      <input
+        type="text"
+        placeholder="Description..."
+        class="form-control"
+        id="description"
+        name="description"
+        [(ngModel)]="toDo.description"
+        required
+      />
+    </div>
+    <div>
+      <label for="dayToDo">Choose a day</label>
+
+      <select name="month" id="month" [(ngModel)]="date.month">
+        <option *ngFor="let mon of months">{{ mon }}</option>
+      </select>
+
+      <select name="day" id="day" [(ngModel)]="date.day">
+        <option *ngFor="let d of days">{{ d }}</option>
+      </select>
+
+      <select name="year" id="year" [(ngModel)]="date.year">
+        <option *ngFor="let yr of years">{{ yr }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="timeToDo">Choose a time</label>
+
+      <select name="hour" id="hour" [(ngModel)]="time.hour">
+        <option *ngFor="let hr of hours">{{ hr }}</option>
+      </select>
+
+      <select name="minute" id="minute" [(ngModel)]="time.minute">
+        <option *ngFor="let min of minutes">{{ min }}</option>
+      </select>
+
+      <select name="dayOrNight" id="dayOrNight" [(ngModel)]="time.dayOrNight">
+        <option *ngFor="let dN of dayOrNights">{{ dN }}</option>
+      </select>
+    </div>
+
+    <div class="btn-box">
+      <button type="submit" class="btn btn-secondary btn-lg">Create</button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

@@ -15,10 +15,11 @@ export class RegisterComponent implements OnInit {
     email: "",
     password: "",
     confirmPassword: "",
-    pet: ""
+    type: "",
+    pumpkins: 0,
   }
 
-  pets = ["Panda", "Racoon"];
+  pets = ["Panda", "Bunny", "penguin"];
 
   constructor(private router: Router, private registerService: RegisterService) { }
 
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
         console.log(`user signed in: ${JSON.stringify(savedUser)}`);
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/signin"]);
       },
       (e) => {
         console.error("Error adding user " + JSON.stringify(e));

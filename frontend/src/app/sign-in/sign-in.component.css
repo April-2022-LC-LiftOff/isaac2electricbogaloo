@@ -5,11 +5,12 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
 
 .container{
   width: 360px;
-  height: 500px;
+  height: 550px;
   margin: 8% auto;
   background: white;
-  border-radius: 5px;
+  border-radius: 15px;
   position: relative;
+  margin-top: 9%;
 }
 
 
@@ -39,12 +40,23 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
     left:40px;
   }
 
-  .container h2{
+  .container h1{
     text-align: center;
     margin-bottom: 40px;
     font-weight: bold;
     font-size:30PX;
+ 
   }
+
+
+  .container h2{
+    text-align: center;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-size: 16px;
+
+  }
+
   .container h3{
     text-align: center;
     margin-bottom: 40px;
@@ -72,7 +84,7 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
     width: 110px;
     height: 35px;
     margin: 0 10px;
-    background: linear-gradient(to right, #ff10ab,#ffad06);
+    background: #6F5ACD;
     border-radius: 30px;
     border:0;
     outline: none;
@@ -91,7 +103,11 @@ url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&displ
 
 
 
-
+  .navbar-brand{
+    
+    margin-left: 1%
+  };
+  
 
 
 

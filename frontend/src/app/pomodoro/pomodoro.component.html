@@ -1,1 +1,54 @@
-<p>pomodoro works!</p>
+
+
+<app-navbar></app-navbar>
+<div class="banner">
+
+
+<div class="card">
+    <section class="position" [@pageNumber]="pageNumber">
+    
+        <div class="flex">
+        <h1 class="title">FOCUS TIME</h1>
+        <div class="counter">
+         <button (click)="decreaseFocusTime()"type="button">-</button>
+        <div>{{workDuration}}</div>
+        <button (click)="increaseFocusTime()"type="button">+</button>
+    </div>
+     <button (click)="toggle('two')" type="button">NEXT</button>
+</div>
+
+<div class="flex">
+    <h1 class="title">SHORT BREAK</h1>
+    <div class="counter">
+     <button (click)="decreaseBreakTime()"type="button">-</button>
+    <div>{{breakDuration}}</div>
+    <button (click)="increaseBreakTime()"type="button">+</button>
+</div>
+<div class="buttons">
+ <button (click)="toggle('three')"type="button">NEXT</button>
+ <button (click)="toggle('one')"type="button">BACK</button>
+</div>
+</div>
+
+<div class="flex">
+    <h1 class="title">{{message}}</h1>
+    <div class="counter">
+    <div>{{minutes}}:{{seconds}}</div>
+    </div>
+    <div class="buttons">
+        <button (click)="toggle('two')"type="button">BACK</button>
+        <button (click)= "start()"type="button">START</button>
+        <button (click)= "stop()"type="button">STOP</button>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+
+ <app-footer></app-footer>
+
+<router-outlet></router-outlet>
+
+
+

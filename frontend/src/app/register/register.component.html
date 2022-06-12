@@ -1,6 +1,11 @@
-<a class="navbar-brand" routerLink="/home"> <img src="https://drive.google.com/uc?export=view&id=1t_2e6E6NGZ0ydCpviCXZI-NHKJulFXs7"alt="logo" style="width:5em; height:5em;" /></a>
+
+<a class="navbar-brand" routerLink="/home"> <img src="../../assets/img/navlogo.png"alt="logo" style="width:4em; height:4em;" /></a>
+<div id="bg">
+    <img src="../../assets/img/regbg.png" alt="">
+</div>
+
     <div id="bg">
-        <img src="https://drive.google.com/uc?export=view&id=1QG2nWFfnHn1JVosz_VIdd7O5zwB_dF-A" alt="">
+        <img src="../../assets/img/regbg.png" alt="">
     </div>
 
         <div class="container">
@@ -10,7 +15,8 @@
             action="register"
             (ngSubmit)="onClickSubmit()"
         >
-            <h2>CREATE ACCOUNT</h2>
+            <h1>CREATE ACCOUNT</h1>
+            <h2> Get 10 points when you sign up today! </h2>
 
             <label for="email" class="form-label">Email</label>
             <input type="email"
@@ -46,18 +52,18 @@
             >
             <label>Select Your Pet:</label>
                 <select
-                        name="pet"
-                        [(ngModel)]="user.pet"
+                        name="type"
+                        [(ngModel)]="user.type"
                         required
                 >
                     <option *ngFor="let p of pets">
                         {{ p }}
                     </option>
                 </select>
-            <h3>Already a member?<a href="#" class="link-primary" id class="signup" >Sign in</a></h3>
+            <h3>Already a member?<a href="#" class="link-primary" routerLink="/signin" id class="signup" >Sign in</a></h3>
 
             <div class="btn-box">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit"class="btn btn-primary">Submit</button>
             </div>
 
 

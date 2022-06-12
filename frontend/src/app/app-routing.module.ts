@@ -6,7 +6,9 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-
+import { ToDoComponent } from './toDo/toDo.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PomodoroComponent } from './pomodoro/pomodoro.component';
 
 const routes: Routes = [
 
@@ -15,7 +17,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'nav', component: NavbarComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'signin', component: SignInComponent }
+  { path: 'signin', component: SignInComponent },
+  { path: 'todo', component: ToDoComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'pomodoro', component: PomodoroComponent}
 
 ];
 
